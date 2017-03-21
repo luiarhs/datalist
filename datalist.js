@@ -4,8 +4,8 @@
     Based on ComboBox Object 
 	http://www.zoonman.com/projects/combobox/
 	All rights reserved.
-	BSD License
-*/
+	BSD License */
+
 Datalist = function (input_name) {
 	
     // Edit element cache 
@@ -39,11 +39,11 @@ Datalist = function (input_name) {
 
 	// Get Items
 	this.listitems = this.dropdownlist.getElementsByTagName('a');
-	for (var i=0;i < this.listitems.length; i++) {
-		var t = i;
+	for (let i = 0; i < this.listitems.length; i++) {
+		let t = i;
 		// Binding Click Event
 		this.listitems[i].onclick = function () {
-			var upv = this.innerHTML;   
+			let upv = this.innerHTML;   
 			upv = upv.replace(/\<b\>/ig, '');
 			upv = upv.replace(/\<\/b\>/ig, '');
 			parobject.edit.value = upv;
@@ -52,10 +52,13 @@ Datalist = function (input_name) {
 		}
 		// Binding OnMouseOver Event
 		this.listitems[i].onmouseover = function (e) {
-			for (var i=0;i < parobject.listitems.length; i++) {
+			
+			for (let i=0;i < parobject.listitems.length; i++) {
+				
 				if (this == parobject.listitems[i]) {
+					
 					if (parobject.currentitem) {
-						parobject.currentitem.className = parobject.currentitem.className.replace(/combobox__list--light/g, '')
+						parobject.currentitem.className = parobject.currentitem.className.replace(/combobox__list--light/g, '');
 					}
 					parobject.currentitem = parobject.listitems[i];
 					parobject.currentitemindex = i;
@@ -64,17 +67,15 @@ Datalist = function (input_name) {
 			}
 		}
 	};
-	
+	// Use RegExp for Search on Typing Event
 	this.edit.onkeyup = function (e) {
-
-		parobject.dropdownlist.style.display = 'block';
-		parobject.visiblecount = 0;
-		
-        var pattern = new RegExp('^'+parobject.edit.value,'i');
-        for (var i = 0; i < parobject.listitems.length; i++) {
+		//Create Pattern 
+        let pattern = new RegExp('^'+parobject.edit.value,'i');
+        
+		for (let i = 0; i < parobject.listitems.length; i++) {
             let input = parobject.listitems[i].innerHTML;
             
-            if ( pattern.test(input) ) {
+			if ( pattern.test(input) ) {
                 parobject.listitems[i].style.display = 'block';
                 parobject.visiblecount++;						
             } else {
