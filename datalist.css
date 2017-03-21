@@ -1,0 +1,63 @@
+/* Styles using BEM CSS
+Copyright (c) 2017, @luiarhs
+All rights reserved.
+GNU General Pulic License v3.0
+*/
+
+@font-face {
+    font-family: Ruda;
+    src: url(fonts/Ruda-Regular.ttf);
+}
+.combobox {
+    font-family: Ruda;
+    font-size: 11px;
+    position: relative;
+    zoom: 1
+}
+.combobox__list {
+    display: none;
+    overflow: auto;
+    position: absolute;
+    top: 32px;
+    width: 339px;
+    height: 162px;
+    border: solid 1px gray;
+    background-color: #fff;    
+    z-index: 1;
+}
+.combobox__list a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    cursor: default;
+}
+.combobox__list--light {
+    color: #fff;
+    background-color: #007dcc;
+}
+.combobox__list, input {
+    font-family: Ruda;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 4px;
+}
+.combobox__span {
+    position: relative;
+    cursor: default;
+    z-index: 2;
+    right: 16px;
+}
+.combobox__input{
+    position: relative;
+	padding-left:8px;
+	margin-top:12.288px;
+	width: 336px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+	border:solid 1px grey;
+    background:#DEE3DF;
+	font-family:'Ruda';
+	font-size:12;
+    z-index: 1;
+}
