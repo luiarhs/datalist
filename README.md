@@ -13,4 +13,4 @@ The HTML5 [datalist](https://www.w3schools.com/tags/tag_datalist.asp "HTML datal
 ## Licence
 __________
 
-GNU General Public License 3.0
+MIT Licence
